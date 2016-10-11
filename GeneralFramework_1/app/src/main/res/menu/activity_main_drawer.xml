@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/tab1" android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Tab 1" />
+        <item android:id="@+id/tab2" android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Tab 2" />
+        <item android:id="@+id/tab3" android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Tab 3" />
+        <item android:id="@+id/tab4" android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Tab 4" />
+        <item android:id="@+id/tab5" android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Tab 5" />
+        <item android:id="@+id/tab6" android:icon="@android:drawable/ic_menu_info_details"
+            android:title="Tab 6" />
+    </group>
+
+    <item android:title="Tools">
+        <menu>
+            <item android:id="@+id/nav_share" android:icon="@android:drawable/ic_menu_help"
+                android:title="Share" />
+            <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_more"
+                android:title="Send" />
+        </menu>
+    </item>
+</menu>

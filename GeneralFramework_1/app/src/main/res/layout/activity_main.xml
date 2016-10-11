@@ -1,0 +1,78 @@
+<android.support.v4.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- CoordinatorLayout. It’s a new layout that let’s you create
+    interactions between Views that you put inside it. As the
+    documentation says it’s a FrameLayout on steroids. It
+    intercepts touch events and let’s you inject your own [Behaviors].  -->
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <!--Next new thing is the [AppBarLayout]. It’s an enhanced version
+        of Linearlayout that allows you to specify scrolling interactions.
+        You can for example create a collapsing Toolbar effect or some
+        other things with it. It’s as simple as putting it into your layout
+        and setting some attributes. But it’s designed to work in pair with
+        CoordinatorLayout so if you use it in some other ViewGroup you will
+        loose it’s functionality. -->
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                />
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                app:tabMode="scrollable"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+                app:tabTextColor="@android:color/white"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabIndicatorHeight="4dp"
+                />
+        </android.support.design.widget.AppBarLayout>
+
+        <!--为了使上面的AppBarLayout不挡住ViewPager里面的元素，
+        需要给ViewPager定义behavior-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        <!--This string value points to
+        android.support.design.widget.AppBarLayout$ScrollingViewBehavior
+        so it’s a fully qualified Behavior class name. It’s a static
+        inner class inside AppBarLayout class. Behavior is a mechanism
+        that let’s you specify interactions between the Views that you
+        put inside a CoordinatorLayout. -->
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer" />
+
+</android.support.v4.widget.DrawerLayout>
